@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кофейное Облако</title>
+    <style>
+        /* Стили CSS здесь */
+        body {
+            font-family: "Avenir", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url("https://img.freepik.com/premium-photo/sweet-pastel-pink-color-paper-override-on-white-background_25920-401.jpg?w=996");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8d7da;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .product-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-list li {
+            flex: 0 0 33%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product-list li img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product-list li h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .product-list li p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .product-list li button {
+            background-color: #F5FFFA;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 20px; /* Задаем радиус скругления */
+        }
+        .product-list li button:hover {
+            background-color: #EAE0C8;
+            color: #ffffff;
+        }
+
+
+
+        section.about {
+            margin-bottom: 40px;
+            background-color: #f8d7da;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section.about h2 {
+            margin-bottom: 20px;
+        }
+
+        section.about p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        section.catalog {
+            background-color: #f8d7da;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section.catalog h2 {
+            margin-bottom: 20px;
+        }
+
+        section.contact {
+            background-color: #f8d7da;
+            padding: 20px;
+            text-align: Left;
+        }
+        section.textcontact{
+            background-color: #f8d7da;
+            padding: 20px;
+            text-align: center;
+        }
+        section.contact h2 {
+            margin-bottom: 20px;
+
+        }
+
+        footer {
+            background-color: #f8d7da;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+    <h1>Кофейное Облако</h1>
+</header>
+
+<main>
+    <section class="about">
+        <h2>О нас</h2>
+        <p>Мы - команда кофе-энтузиастов, которая страстно предана искусству приготовления и предоставления настоящего кофе высочайшего качества. В Кофейном Облаке мы сочетаем великолепные сорта кофе со всего мира с профессионализмом и теплым обслуживанием.</p>
+        <p>Наше меню включает разнообразные сорта кофе, начиная от эспрессо и капучино до роскошных латте и холодных напитков. Мы гордимся своими свежеобжаренными зернами и профессиональными баристами, которые с радостью сделают для вас кофе по вашему вкусу.</p>
+        <p>Приходите в Кофейное Облако и наслаждайтесь вкусом и ароматом настоящего кофе в уютной атмосфере. Мы с нетерпением ждем вас!</p>
+    </section>
+
+
+    <section class="catalog">
+        <h2>Каталог товаров</h2>
+        <ul class="product-list">
+            <li>
+                <img src="coffee1.jpg" alt="Кофе 1">
+                <h3>Кофе 1</h3>
+                <p>Ароматный кофе с нежными нотками шоколада и орехов.</p>
+                <button>Добавить в корзину</button>
+            </li>
+            <li>
+                <img src="coffee2.jpg" alt="Кофе 2">
+                <h3>Кофе 2</h3>
+                <p>Богатый и насыщенный вкус кофе с нотками карамели.</p>
+                <button>Добавить в корзину</button>
+            </li>
+            <li>
+                <img src="coffee3.jpg" alt="Кофе 3">
+                <h3>Кофе 3</h3>
+                <p>Нежный и ароматный эспрессо с бархатистой пенкой.</p>
+                <button>Добавить в корзину</button>
+            </li>
+            <!-- Добавьте другие товары с аналогичной разметкой -->
+        </ul>
+    </section>
+    <section class = "textcontact">
+        <h2>Контакты</h2>
+        <p>Телефон: 89818465958</p>
+        <p>Email: info@coffeeshop.com</p>
+        <p>Социальные сети:</p>
+    </section>
+    <section class="contact">
+        <ul>
+            <li><a href="https://www.facebook.com/coffeeshop">https://www.facebook.com/coffeeshop </a></li>
+            <li><a href="https://www.instagram.com/coffeeshop">https://www.instagram.com/coffeeshop</a></li>
+            <li><a href="https://www.twitter.com/coffeeshop">https://www.twitter.com/coffeeshop</a></li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>© 2023 Кофейное Облако. Все права защищены.</p>
+</footer>
+</body>
+</html>
