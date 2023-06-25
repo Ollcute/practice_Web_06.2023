@@ -10,10 +10,9 @@
             font-family: "Segoe print", sans-serif;
             margin: 0;
             padding: 0;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
             background-size: contain;
-            background: -webkit-linear-gradient(90deg, #ba8c8c,#ebc6c6,#f4e6e6);/* Chrome 10-25, Safari 5.1-6 */
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(90deg, #ba8c8c, #ebc6c6, #f4e6e6) no-repeat fixed;
         }
 
         header {
@@ -161,22 +160,26 @@
             text-align: center;
         }
     </style>
+    <script src="script.js"></script>
 </head>
 <body>
 <header>
     <nav>
         <ul>
             <li><a href="#">Главная</a></li>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="#catalog-section">Каталог</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#textcontact">Контакты</a></li>
+            <li><a href="cart.html">Корзина</a></li>
+
+
         </ul>
     </nav>
     <h1>Кофейное Облако</h1>
 </header>
 
 <main>
-    <section class="about">
+    <section id="about" class="about">
         <h2>О нас</h2>
         <p>Мы - команда кофе-энтузиастов, которая страстно предана искусству приготовления и предоставления настоящего кофе высочайшего качества. В Кофейном Облаке мы сочетаем великолепные сорта кофе со всего мира с профессионализмом и теплым обслуживанием.</p>
         <p>Наше меню включает разнообразные сорта кофе, начиная от эспрессо и капучино до роскошных латте и холодных напитков. Мы гордимся своими свежеобжаренными зернами и профессиональными баристами, которые с радостью сделают для вас кофе по вашему вкусу.</p>
@@ -184,7 +187,7 @@
     </section>
 
 
-    <section class="catalog">
+    <section id="catalog-section" class="catalog">
         <h2>Каталог товаров</h2>
         <ul class="product-list">
             <li>
@@ -214,7 +217,7 @@
 
         </ul>
     </section>
-    <section class = "textcontact">
+    <section id="textcontact" class = "textcontact">
         <h2>Контакты</h2>
         <p>Телефон: 89818465958</p>
         <p>Email: info@coffeeshop.com</p>
