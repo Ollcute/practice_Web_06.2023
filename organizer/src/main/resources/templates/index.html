@@ -21,7 +21,7 @@
             background-size: contain;
             padding: 20px;
             text-align: center;
-            //background-color: #ebc6c6;
+        //background-color: #ebc6c6;
             background-image: url("header.jpg");
 
 
@@ -112,7 +112,7 @@
 
         section.about {
             margin-bottom: 40px;
-            //background-color: #f8d7da;
+        //background-color: #f8d7da;
             background: #f8d7da;
             padding: 20px;
             text-align: center;
@@ -194,27 +194,26 @@
                 <img src="Leonardo_Diffusion_a_cup_of_cappuccino_coffee_with_hazelnuts_o_1.jpg">
                 <h3>Капучино с лесным орехом</h3>
                 <p>Ароматный кофе с нежными нотками шоколада и орехов.</p>
-                <button>Добавить в корзину</button>
+                <button onclick="addToCart(0, 'Капучино с лесным орехом', 2, 'Leonardo_Diffusion_a_cup_of_cappuccino_coffee_with_hazelnuts_o_1.jpg')">Добавить в корзину</button>
             </li>
             <li>
                 <img src="Leonardo_Diffusion_a_cup_of_coffee_latte_with_caramel_on_a_whi_3.jpg">
                 <h3>Латте с карамелью</h3>
                 <p>Богатый и насыщенный вкус кофе с нотками карамели.</p>
-                <button>Добавить в корзину</button>
+                <button onclick="addToCart(1, 'Латте с карамелью', 4, 'Leonardo_Diffusion_a_cup_of_coffee_latte_with_caramel_on_a_whi_3.jpg')">Добавить в корзину</button>
             </li>
             <li>
                 <img src="Leonardo_Diffusion_a_cup_of_coffee_invigorating_espresso_on_a_0.jpg">
                 <h3>Бодрящий эспрессо</h3>
                 <p>Нежный и ароматный эспрессо с бархатистой пенкой.</p>
-                <button>Добавить в корзину</button>
+                <button onclick="addToCart(2, 'Бодрящий эспрессо', 3, 'Leonardo_Diffusion_a_cup_of_coffee_invigorating_espresso_on_a_0.jpg')">Добавить в корзину</button>
             </li>
             <li>
                 <img src="Leonardo_Diffusion_coffee_with_ice_cream_in_a_glass_on_a_white_2.jpg">
                 <h3>Кофе Глясе</h3>
                 <p>Ароматный Американо с добавлением мороженого.</p>
-                <button>Добавить в корзину</button>
+                <button onclick="addToCart(3, 'Кофе Глясе', 8, 'Leonardo_Diffusion_coffee_with_ice_cream_in_a_glass_on_a_white_2.jpg')">Добавить в корзину</button>
             </li>
-
         </ul>
     </section>
     <section id="textcontact" class = "textcontact">
@@ -235,5 +234,57 @@
 <footer>
     <p>© 2023 Кофейное Облако. Все права защищены.</p>
 </footer>
+<form action="/cart/add" method="post">
+    <input type="hidden" name="id" value="1" /> <!-- ID товара -->
+    <input type="text" name="name" placeholder="Название товара" /> <!-- Название товара -->
+    <input type="number" name="price" placeholder="Цена" /> <!-- Цена товара -->
+    <input type="submit" value="Добавить в корзину" />
+</form>
+<div id="cart-counter">0</div>
+
+
+<script>
+    //localStorage.clear();
+    function addToCart(productId, productName, productPrice, productImage) {
+        var product = {
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: 1
+        };
+
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+        var existingProduct = cart.find(function(item) {
+            return item.id === productId;
+        });
+
+        if (existingProduct) {
+            existingProduct.quantity++;
+        } else {
+            cart.push(product);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCounter();
+        calculateTotal();
+    }
+
+    function calculateTotal() {
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+        var total = 0;
+
+        for (var i = 0; i < cart.length; i++) {
+            var product = cart[i];
+            total += product.price * product.quantity;
+        }
+
+        // Выводим общую стоимость в элемент с id "total"
+        var totalElement = document.getElementById("total");
+        if (totalElement) {
+            totalElement.innerHTML = total.toFixed(2);
+        }
+    }
+</script>
 </body>
 </html>
